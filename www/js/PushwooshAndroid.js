@@ -30,7 +30,7 @@ function registerPushwooshAndroid() {
 
             //dump custom data to the console if it exists
             if(typeof(userData) != "undefined") {
-				console.warn('user data: ' + JSON.stringify(userData));
+				alert('user data: ' + JSON.stringify(userData));
 			}
 
 			//and show alert
@@ -55,7 +55,7 @@ function registerPushwooshAndroid() {
 		function(status)
 		{
 			alert("failed to register: " +  status);
-		    console.warn(JSON.stringify(['failed to register ', status]));
+		    alert(JSON.stringify(['failed to register ', status]));
 		}
 	);
 }
@@ -63,7 +63,7 @@ function registerPushwooshAndroid() {
 function onPushwooshAndroidInitialized(pushToken)
 {
 	//output the token to the console
-	console.warn('push token: ' + pushToken);
+	alert('push token: ' + pushToken);
 
 	var pushNotification = window.plugins.pushNotification;
 	
@@ -71,25 +71,25 @@ function onPushwooshAndroidInitialized(pushToken)
 	pushNotification.getPushToken(
 		function(token)
 		{
-			console.warn('push token: ' + token);
+			alert('push token: ' + token);
 		}
 	);
 
 	//and HWID if you want to communicate with Pushwoosh API
 	pushNotification.getPushwooshHWID(
 		function(token) {
-			console.warn('Pushwoosh HWID: ' + token);
+			alert('Pushwoosh HWID: ' + token);
 		}
 	);
 	
 	pushNotification.getTags(
 		function(tags)
 		{
-			console.warn('tags for the device: ' + JSON.stringify(tags));
+			alert('tags for the device: ' + JSON.stringify(tags));
 		},
 		function(error)
 		{
-			console.warn('get tags error: ' + JSON.stringify(error));
+			alert('get tags error: ' + JSON.stringify(error));
 		}
 	);
 	 
@@ -119,10 +119,10 @@ function onPushwooshAndroidInitialized(pushToken)
 	//settings tags
 	pushNotification.setTags({deviceName:"hello", deviceId:10},
 		function(status) {
-			console.warn('setTags success');
+			alert('setTags success');
 		},
 		function(status) {
-			console.warn('setTags failed');
+			alert('setTags failed');
 		}
 	);
 

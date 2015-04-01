@@ -18,9 +18,9 @@
  */
 
 function registerPushwooshAndroid() {
-	alert("XXXXXX");
- 	var pushNotification = window.plugins.pushNotification;
 
+ 	var pushNotification = window.plugins.pushNotification;
+	console.log(pushNotification);
 	//set push notifications handler
 	document.addEventListener('push-notification',
 		function(event)
@@ -54,7 +54,7 @@ function registerPushwooshAndroid() {
 		},
 		function(status)
 		{
-			alert("failed to register: " +  status);
+			console.log("failed to register: " +  status);
 		    alert(JSON.stringify(['failed to register ', status]));
 		}
 	);

@@ -18,7 +18,7 @@
  */
 
 function registerPushwooshAndroid() {
-
+	alert("XXXXXX");
  	var pushNotification = window.plugins.pushNotification;
 
 	//set push notifications handler
